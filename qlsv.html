@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý thông tin sinh viên</title>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+
+<h2>Nhập thông tin sinh viên</h2>
+<form id="studentForm">
+    <label for="studentId">Mã SV:</label><br>
+    <input type="text" id="studentId" name="studentId" placeholder="Nhập Mã SV"><br>
+    <label for="fullName">Họ và tên:</label><br>
+    <input type="text" id="fullName" name="fullName" placeholder="Nhập Họ và tên"><br>
+    <label for="dob">Ngày sinh:</label><br>
+    <input type="date" id="dob" name="dob"><br>
+    <label for="class">Lớp học:</label><br>
+    <input type="text" id="class" name="class" placeholder="Nhập Lớp học"><br>
+    <label for="gpa">Điểm GPA:</label><br>
+    <input type="number" id="gpa" name="gpa" step="0.01" placeholder="Nhập Điểm GPA"><br><br>
+    <input type="button" value="Thêm sinh viên" onclick="addStudent()">
+</form>
+
+<h2>Danh sách sinh viên</h2>
+<table id="studentTable">
+    <tr>
+        <th>Mã SV</th>
+        <th>Họ và tên</th>
+        <th>Ngày sinh</th>
+        <th>Lớp học</th>
+        <th>Điểm GPA</th>
+    </tr>
+</table>
+
+<script>
+    let students = [];
+
+    function addStudent() {
+        let studentId = document.getElementById("studentId").value;
+        let fullName = document.getElementById("fullName").value;
+        let dob = document.getElementById("dob").value;
+        let className = document.getElementById("class").value;
+        let gpa = document.getElementById("gpa").value;
+
+        let student = {
+            studentId: studentId,
+            fullName: fullName,
+            dob: dob,
+            className: className,
+            gpa: gpa
+        };
+
+        students.push(student);
+        displayStudents();
+        document.getElementById("studentForm").reset();
+    }
+
+    function displayStudents() {
+        let table = document.getElementById("studentTable");
+        table.innerHTML = "<tr><th>Mã SV</th><th>Họ và tên</th><th>Ngày sinh</th><th>Lớp học</th><th>Điểm GPA</th></tr>";
+
+        for (let i = 0; i < students.length; i++) {
+            let row = table.insertRow(-1);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+
+            cell1.innerHTML = students[i].studentId;
+            cell2.innerHTML = students[i].fullName;
+            cell3.innerHTML = students[i].dob;
+            cell4.innerHTML = students[i].className;
+            cell5.innerHTML = students[i].gpa;
+        }
+    }
+</script>
+
+</body>
+</html>
+
