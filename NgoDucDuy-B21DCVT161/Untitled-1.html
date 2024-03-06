@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="Untitled-2.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Survey Form</h1>
+    <form id="survey-form">
+      <label for="name">Họ và tên:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="dob">Ngày tháng năm sinh:</label>
+      <input type="date" id="dob" name="dob" required>
+      <label for="cccd">CCCD:</label>
+      <input type="text" id="cccd" name="cccd" required>
+      <label for="address">Địa chỉ thường trú:</label>
+      <input type="text" id="address" name="address" required>
+      <div id="questions"></div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="result" style="display: none;">
+      <h2>Kết quả:</h2>
+      <div id="answers"></div>
+    </div>
+  </div>
+  <script src="Untitled-3.js"></script>
+</body>
+</html>

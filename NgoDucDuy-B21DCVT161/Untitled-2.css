@@ -1,0 +1,39 @@
+/* style.css */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  #result {
+    margin-top: 20px;
+  }
+  
+  #answers {
+    margin-top: 10px;
+  }
+  
